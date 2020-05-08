@@ -33,4 +33,13 @@ Creation des entités + relation :
 `php bin/console make:entity `
 
 Mettre en place la BDD : `php bin/console make:migration
-                   php bin/console doctrine:migrations:migrate`
+                  php bin/console doctrine:migrations:migrate`
+                  
+                  
+ Mise en place des Fixtures                
+ `composer req --dev orm-fixtures`
+ 
+ Modification dans le dossier fixture puis verifier avec `php bin/console doctrine:fixtures:load
+`
+ 
+               
