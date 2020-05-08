@@ -29,3 +29,8 @@ Installation de SASS : `npm install sass-loader@^7.0.1 node-sass --save-dev`
 Page d'accueil 
 `php bin/console make:controller DefaultController`
 
+Creation des entités + relation :
+`php bin/console make:entity `
+
+Mettre en place la BDD : `php bin/console make:migration
+                   php bin/console doctrine:migrations:migrate`
