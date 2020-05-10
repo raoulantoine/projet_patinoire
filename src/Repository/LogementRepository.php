@@ -20,7 +20,7 @@ class LogementRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Logement[] Returns an array of Logement objects
+    //  * @return LogementFixtures[] Returns an array of LogementFixtures objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class LogementRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Logement
+    public function findOneBySomeField($value): ?LogementFixtures
     {
         return $this->createQueryBuilder('l')
             ->andWhere('l.exampleField = :val')

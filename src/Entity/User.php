@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -132,4 +135,75 @@ class User
 
         return $this;
     }
+
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPassword()
+    {
+        // TODO: Implement getPassword() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->nom,
+            $this->motdepasse,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->nom,
+            $this->motdepasse,
+            // see section on salt below
+            // $this->salt
+            ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
 }
