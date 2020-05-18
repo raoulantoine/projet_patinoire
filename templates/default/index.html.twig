@@ -11,5 +11,15 @@
         <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
     </ul>
+
+    {% if app.user %}
+
+        <div class="mb-3">
+        You are logged in as {{ app.user.login }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+
+    {% endif %}
+
 </div>
+    
 {% endblock %}
