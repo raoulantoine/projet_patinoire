@@ -1,0 +1,12 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+       - App\Entity\Category
+       - App\Entity\Housing
+       - App\Entity\Document
+       - App\Entity\User
+
+    site_name: 'Dasbord'
+
+    user:
+      name_property_path: 'fistname'
