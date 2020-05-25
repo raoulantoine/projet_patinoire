@@ -18,6 +18,9 @@ class UserFixtures extends Fixture
         $test ->setLastName("Raoul");
         $test ->setEmail('antoine.raoul@live.fr');
         $test ->setPassword("000");
+        $this->addReference('user1',$test);
+
+
 
 
 
@@ -28,6 +31,8 @@ class UserFixtures extends Fixture
         $test2 ->setLastName("ewen");
         $test2 ->setEmail('ewen.raoul@live.fr');
         $test2 ->setPassword("root");
+        $this->addReference('user2',$test);
+
 
 
 
@@ -36,11 +41,6 @@ class UserFixtures extends Fixture
         $manager->flush();
     }
 
-    public function getDependencies()
-    {
-        return [UserFixtures::class
-        ];
-    }
 }
 
 
