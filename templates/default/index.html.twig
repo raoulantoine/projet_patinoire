@@ -4,18 +4,22 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Bienvenue sur la nouvelle interface </h1>
+    <div class="example-wrapper">
+        <h1 class="text-center">Gérez vos biens immobiliers avec le meilleur logiciel gratuit de gestion locative immobilière </h1>
+        <p class="text-center">Rentila est le meilleur logiciel de gestion locative immobilière en ligne. Suivi des loyers et charges,
+            comptabilité, aide à la déclaration des revenus fonciers... Les différentes étapes de la vie du contrat de
+            location sont couvertes par notre site.</p>
 
 
-    {% if app.user %}
+        {% if app.user %}
 
-        <div class="mb-3">
-            You are logged in as {{ app.user.fistname }}  {{ app.user.lastname }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
+            <div class="mb-3">
+                You are logged in as {{ app.user.fistname }}  {{ app.user.lastname }}, <a
+                        href="{{ path('app_logout') }}">Logout</a>
+            </div>
 
-    {% endif %}
+        {% endif %}
 
-</div>
+    </div>
 
 {% endblock %}

@@ -2,20 +2,56 @@
 {% block title %}Inscription{% endblock %}
 {% block body %}
 
-    <div class="row">
+    <div class="container">
         <div class="col-6 offset-3">
             <div class="card bg-light">
                 <div class="card-body">
-                    <h1 class="text-center">Register</h1>
+                    <h1 class="text-center">Local</h1>
+                    <p class="text-center">Ouvrir un compte gratuit</p>
+                    <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
+                        !</p>
                     {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.fistname) }}
-                    {{ form_row(registrationForm.lastname) }}
-                    {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.plainPassword) }}
+                    <div></div>
+                    <label class="radio cb-rb block">
+                        <input type="radio" name="type" value="landlord" checked="checked">
+                        <p>
+                            Je suis proprietaire
+                        </p>
+
+                    </label>
+                    <label class="radio cb-rb block">
+                        <input type="radio" name="type" value="landlord" checked="checked">
+                        <p>
+                            Je suis Locataire
+                        </p>
+                    </label>
+
+                    <div class="card-body">
+                        {{ form_widget(registrationForm.fistname, { 'attr': {'placeholder': 'Nom'} }) }}
+                    </div>
+
+                    <div class="card-body">
+                        {{ form_widget(registrationForm.lastname, { 'attr': {'placeholder': 'Prenom'} }) }}
+                    </div>
+                    <div class="card-body">
+
+                        {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'Email'} }) }}
+                    </div>
+                    <div class="card-body">
+                        {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'placeholder': 'Mot de passe'} }) }}
+                    </div>
+                    <div class="card-body">
+                        {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'placeholder': ' Confirmation du mot de passe'} }) }}
+                    </div>
                     {{ form_row(registrationForm.agreeTerms) }}
 
-                    <button class="btn btn-primary btn-block">Register</button>
+                    <button class="btn btn-primary btn-block">Inscription</button>
                     {{ form_end(registrationForm) }}
+
+
+                    <div class="card-body">
+                        <a href="{{ path('app_login') }}">Deja un compte ? Cliquez-ici</a>
+                    </div>
                 </div>
             </div>
         </div>

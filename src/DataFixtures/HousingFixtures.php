@@ -21,7 +21,7 @@ class HousingFixtures extends Fixture
         $test->setOwner('Ewen');
         $test->setRent('500');
         $this->addReference('house1', $test);
-        
+
 
 
 

@@ -13,10 +13,7 @@ class DocumentFixtures extends Fixture implements DependentFixtureInterface
     {
         $test = new Document();
 
-        $test->setFichier('Quitance');
-        $test->setFichier('Bail');
-        $test->setFichier('Etatdeslieux');
-        $test->setFichier('Contrat');
+        $test->setFichier('Bail','Etatdeslieux','Contrat');
         $test->setHousing($this->getReference('house1'));
 
 
