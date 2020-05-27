@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Inscription{% endblock %}
 {% block body %}
 
@@ -11,20 +12,19 @@
                     <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
                         !</p>
                     {{ form_start(registrationForm) }}
-                    <div></div>
-                    <label class="radio cb-rb block">
-                        <input type="radio" name="type" value="landlord" checked="checked">
-                        <p>
-                            Je suis proprietaire
-                        </p>
+                    <div class="card-body">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox"  class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Je suis propriétaire</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                        <label class="custom-control-label" for="customSwitch2">Je suis locataire</label>
+                    </div>
+                    </div>
 
-                    </label>
-                    <label class="radio cb-rb block">
-                        <input type="radio" name="type" value="landlord" checked="checked">
-                        <p>
-                            Je suis Locataire
-                        </p>
-                    </label>
+
+
 
                     <div class="card-body">
                         {{ form_widget(registrationForm.fistname, { 'attr': {'placeholder': 'Nom'} }) }}
@@ -43,9 +43,10 @@
                     <div class="card-body">
                         {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'placeholder': ' Confirmation du mot de passe'} }) }}
                     </div>
+
                     {{ form_row(registrationForm.agreeTerms) }}
 
-                    <button class="btn btn-primary btn-block">Inscription</button>
+                    <button class="btn btn-outline-primary btn-sm btn-block">Inscription</button>
                     {{ form_end(registrationForm) }}
 
 
@@ -53,7 +54,17 @@
                         <a href="{{ path('app_login') }}">Deja un compte ? Cliquez-ici</a>
                     </div>
                 </div>
+
+                <footer class="page-footer">
+                    <div class="container text-center">
+
+                        <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
+                    </div>
+                </footer>
             </div>
         </div>
+
     </div>
+
+
 {% endblock %}

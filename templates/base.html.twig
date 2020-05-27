@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -32,10 +33,14 @@
                     <a class="nav-link" href="{{ path('app_logout') }}">Accueil</a>
                 </li>
                 <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Avantages</a>
+                    <a class="nav-link" href="{{ path('advantage') }}">Avantages</a>
                 </li>
                 <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Tarifs</a>
+                    <a class="nav-link" href="{{ path('price') }}">Tarifs</a>
+                </li>
+
+                <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('presentation') }}">Présentation</a>
                 </li>
                 <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
                     <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
@@ -76,13 +81,6 @@
     {% endblock %}
 </div>
 
-<footer class="page-footer">
-    <div class="container">
-
-
-        <i class="fa fa-copyright"></i> Local 2020
-    </div>
-</footer>
 
 {% block javascripts %}{% endblock %}
 </body>

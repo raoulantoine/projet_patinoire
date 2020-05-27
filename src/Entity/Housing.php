@@ -56,11 +56,13 @@ class Housing
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $locataire;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $proprietaire;
 
