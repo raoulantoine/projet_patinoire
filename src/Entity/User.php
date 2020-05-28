@@ -54,6 +54,11 @@ class User implements \Symfony\Component\Security\Core\User\UserInterface
      */
     private $roles = [];
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $activation_token;
+
     public function __construct()
     {
         $this->housings = new ArrayCollection();
@@ -209,5 +214,17 @@ class User implements \Symfony\Component\Security\Core\User\UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
+
+    public function setActivationToken(?string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
+
+        return $this;
     }
 }

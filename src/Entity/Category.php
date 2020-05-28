@@ -24,7 +24,6 @@ class Category
 
     /**
      * @ORM\ManyToOne(targetEntity=Housing::class, inversedBy="categories")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $housing;
 

@@ -24,7 +24,7 @@ class Document
 
     /**
      * @ORM\ManyToOne(targetEntity=Housing::class, inversedBy="documents")
-     * @ORM\JoinColumn(nullable=false)
+
      */
     private $housing;
 
