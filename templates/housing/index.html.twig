@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Housing{% endblock %}
+
+{% block body %}
+    <h1>Logement</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Adresse</th>
+                <th>Surface</th>
+                <th>Piece</th>
+                <th>Date d'entrer</th>
+                <th>Date de sortie</th>
+                <th>Propriétaire</th>
+                <th>Loyer</th>
+{#                <th>actions</th>#}
+            </tr>
+        </thead>
+        <tbody>
+        {% for housing in housings %}
+            <tr>
+                <td>{{ housing.adress }}</td>
+                <td>{{ housing.surface }}</td>
+                <td>{{ housing.piece }}</td>
+                <td>{{ housing.dateEnter ? housing.dateEnter|date('Y-m-d') : '' }}</td>
+                <td>{{ housing.dateExit ? housing.dateExit|date('Y-m-d') : '' }}</td>
+                <td>{{ housing.owner }}</td>
+                <td>{{ housing.rent }}</td>
+                <td>
+                    {#<a href="{{ path('housing_show', {'id': housing.id}) }}">show</a>
+                    <a href="{{ path('housing_edit', {'id': housing.id}) }}">edit</a>#}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('housing_new') }}">Create new</a>
+{% endblock %}

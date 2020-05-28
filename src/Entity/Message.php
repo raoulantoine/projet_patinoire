@@ -24,13 +24,11 @@ class Message
 
     /**
      * @ORM\ManyToOne(targetEntity=Housing::class, inversedBy="messages")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $housing;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="messages")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 

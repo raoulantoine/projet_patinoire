@@ -9,6 +9,8 @@
                     <p class="text-center">Ouvrir un compte gratuit</p>
                     <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
                         !</p>
+
+                    {#methode de connexion avec redirection#}
                     <form method="post">
                         {% if error %}
                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -19,38 +21,58 @@
                                         href="{{ path('app_logout') }}">Logout</a>
                             </div>
                         {% endif %}
+
+                        {#email #}
                         <div class="form-group">
                             <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
                                    class="form-control" required autofocus placeholder="Email">
                         </div>
+                        {# mot de passe  #}
                         <div class="form-group">
                             <input type="password" name="password" id="inputPassword" class="form-control"
                                    placeholder="Mot de passe" required>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         </div>
+
+                        {#bouton se souvenir de moi a mettre en place dans la V2#}
+                        <form method="post">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="_remember_me">
+                            <label class="custom-control-label" for="customSwitch1" >Se souvenir de moi</label>
+                        </div>
+                        </form>
+
+
+                        {#bouton connexion#}
+                        <hr>
                         <button type="submit" class="btn btn-outline-primary btn-sm btn-block">
                             <i class="fa fa-sign-in"></i>
                             Connexion
                         </button>
-                    </form>
-                    <hr>
-                    <a href="{{ path('app_register') }}">
-                        <i class="fa fa-user-plus"></i>
-                        Pas de compte ? Cliquez ici.
-                    </a>
+
+
+                        {#lien vers la page d'inscription #}
+                        <hr>
+                        <a href="{{ path('app_register') }}">
+                            <i class="fa fa-user-plus"></i>
+                            Pas de compte ? Cliquez ici.
+                        </a>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <footer class="page-footer">
-        <div class="container text-center">
+    <div class="card-body">
+
+        <footer class="page-footer">
+            <div class="container text-center">
 
 
+                <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
+            </div>
+        </footer>
 
-            <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
-        </div>
-    </footer>
-    
+    </div>
+
 {% endblock %}
