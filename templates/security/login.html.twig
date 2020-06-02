@@ -42,22 +42,20 @@
                         </div>
 
 
-
-                        {#bouton se souvenir de moi a mettre en place dans la V2#}
-                       {# <form method="post">
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="_remember_me">
-                            <label class="custom-control-label" for="customSwitch1" >Se souvenir de moi</label>
-                        </div>
-                        </form>
-
-
-
-#}
                         {#route mot de passe oublé#}
-                        <a href="{{ path('app_forgotten_password') }}">
+                        <div class="container">
+                        <a href="{{ path('app_forgotten_password') }}" >
                             <i class="fas fa-lock"></i>
                             Mot de passe oublié ?
+
+                        </div>
+
+                            {#bouton se souvenir de moi #}
+                            <div class="container">
+
+                            <label>
+                                <input type="checkbox" name="_remember_me"> Remember me
+                            </label>
 
                         {#bouton connexion#}
                         <hr>

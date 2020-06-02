@@ -7,6 +7,7 @@
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('build/favicon.ico') }}?v=2">
 </head>
 
 <body id="{% block body_id %}{% endblock %}">
@@ -81,16 +82,54 @@
     {% endblock %}
 </div>
 
-<div class="card-body">
+<div class="d-flex align-items-end">
     <footer class="page-footer">
-        <div class="container text-center">
+      <div class="card-body">
+          <p>2019-2020 © Local Tous droits réservés.
+          </p>
 
-            <a class="nav-link" href="{{ path('contact') }}">Contact</a>
 
-            <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
+              <p class="copy m-b-10">
+                  <img src=" class="pull-left m-b-10" alt="WWF" width="55">
+                  La quittance électronique, c'est pratique, gratuit et vous faites un geste pour l'environnement.
+                  Pour éviter d'augmenter la pression sur les forêts, diminuez votre consommation de papier.
+                  <a href="https://www.worldwildlife.org/initiatives/forests" onclick="target='_blank';">WWF</a>
+              </p>
 
+          </div>
+
+
+        <div class="span2 pull-right">
+            <ul>
+                <li><h5>Local</h5></li>
+                <li><a href="">Qui nous-sommes?</a></li>
+                <li><a href="">Publicité</a></li>
+
+                <li><a href="{{ path('contact') }}">Nous contacter</a></li>
+                <li><a href="https://www.facebook.com/rentilacom" target="_blank"><span aria-hidden="true" class="icon-facebook"></span></a>
+                    <a href="https://twitter.com/rentila" target="_blank"><span aria-hidden="true" class="icon-twitter"></span></a>
+                    <a href="https://instagram.com/rentilagram/" target="_blank"><span aria-hidden="true" class="icon-instagram"></span></a>
+                    <a href="https://www.linkedin.com/company/rentila" target="_blank"><span aria-hidden="true" class="icon-linkedin2"></span></a>
+                </li>
+            </ul>
         </div>
-    </footer>
+        <div class="span2 pull-right">
+            <ul>
+                <li><h5>CGU</h5></li>
+                <li><a href="">Conditions</a></li>
+                <li><a href="">Confidentialité</a></li>
+            </ul>
+        </div>
+        <div class="span2 pull-right">
+            <ul>
+                <li><h5>Aide</h5></li>
+                <li><a href="">Centre d'aide</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </div>
+
+
+</footer>
 
 </div>
 
