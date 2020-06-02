@@ -1,5 +1,12 @@
-{% extends 'base.html.twig' %}
-{% block title %}Log in!{% endblock %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Local{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
 {% block body %}
     <div class="container">
         <div class="col-6 offset-3">
@@ -34,14 +41,23 @@
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         </div>
 
+
+
                         {#bouton se souvenir de moi a mettre en place dans la V2#}
-                        <form method="post">
+                       {# <form method="post">
                         <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="_remember_me">
                             <label class="custom-control-label" for="customSwitch1" >Se souvenir de moi</label>
                         </div>
                         </form>
 
+
+
+#}
+                        {#route mot de passe oublé#}
+                        <a href="{{ path('app_forgotten_password') }}">
+                            <i class="fas fa-lock"></i>
+                            Mot de passe oublié ?
 
                         {#bouton connexion#}
                         <hr>
@@ -67,9 +83,8 @@
 
         <footer class="page-footer">
             <div class="container text-center">
-
-
                 <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
+
             </div>
         </footer>
 

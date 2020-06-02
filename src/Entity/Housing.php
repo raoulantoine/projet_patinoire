@@ -55,12 +55,12 @@ class Housing
     private $rent;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housing")
      */
     private $locataire;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housing")
      */
     private $proprietaire;
 

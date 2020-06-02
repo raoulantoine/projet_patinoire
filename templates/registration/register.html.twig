@@ -1,6 +1,13 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Local{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
 
-{% block title %}Inscription{% endblock %}
 {% block body %}
 
     <div class="container">
@@ -13,17 +20,6 @@
                         !</p>
                     {{ form_start(registrationForm) }}
                     <div class="card-body">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox"  class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Je suis propriétaire</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                        <label class="custom-control-label" for="customSwitch2" >Je suis locataire</label>
-                    </div>
-                    </div>
-
-
 
 
                     <div class="card-body">
@@ -63,6 +59,8 @@
     <div class="card-body">
     <footer class="page-footer">
         <div class="container text-center">
+            <div class="card-body text-center">En vous inscrivant, vous reconnaissez avoir lu et
+                accepté les Conditions d'utilisation et la Politique de confidentialité.</div>
 
             <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
         </div>
