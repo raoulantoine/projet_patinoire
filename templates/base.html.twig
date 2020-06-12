@@ -1,57 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Local{% endblock %}</title>
+    <title>{% block title %}RELATION{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('build/favicon.ico') }}?v=2">
 </head>
 
-<body id="{% block body_id %}{% endblock %}">
+
 
 {% block nav %}
-    <nav id="main-nav" class="container-fluid navbar navbar-expand-lg navbar-light bg-light border rounded mb-3">
-        <ul class="navbar-nav">
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            {% if is_granted('ROLE_ADMIN') %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('easyadmin') }}">Tableau de bord</a>
-                </li>
-            {% endif %}
-            {% if is_granted('ROLE_USER') %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('housing_index') }}">Dasbord</a>
-                </li>
-            {% else %}
-                <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Accueil</a>
-                </li>
-                <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('advantage') }}">Avantages</a>
-                </li>
-                <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('price') }}">Tarifs</a>
-                </li>
 
-                <li class="nav-item {% if mainNavHome is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('presentation') }}">Présentation</a>
-                </li>
-                <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-                </li>
-                <li class="nav-item {% if mainNavRegistration is defined %}active{% endif %}">
-                    <a class="nav-link" href="{{ path('app_register') }}">Inscription</a>
-                </li>
-            {% endif %}
-        </ul>
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a href="{{ path('homepage') }}"><img src="{{ asset('build/logo.png')  }} " width="80" height="80" alt="Relation-logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <ul class="navbar-nav ml-auto text-uppercase">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('easyadmin') }}">Tableau de bord</a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('housing_index') }}">Mon compte</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item text-uppercase  {% if mainNavHome is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
+                        </li>
+                        <li class="nav-item text-uppercase {% if mainNavHome is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('advantage') }}">Avantages</a>
+                        </li>
+                        <li class="nav-item text-uppercase  {% if mainNavHome is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('price') }}">Tarifs</a>
+                        </li>
+
+                        <li class="nav-item text-uppercase {% if mainNavHome is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('presentation') }}">Présentation</a>
+                        </li>
+                        <li class="nav-item {% if mainNavLogin is defined %}active{% endif %}">
+                            <a class="nav-link" href="{{ path('app_login') }}"><i class="fas fa-user fa-1x"></i> Connexion</a>
+                        </li>
+                        <li class="nav-item text-uppercase {% if mainNavRegistration is defined %}active{% endif %}">
+                            <a class="nav-link " href="{{ path('app_register') }} ">Inscription</a>
+                        </li>
+                    {% endif %}
+                </ul>
+        </div>
     </nav>
+
+
+
+
+
+
 {% endblock %}
 
 {% block flash %}
@@ -77,63 +86,154 @@
     {% endfor %}
 {% endblock %}
 
-<div class="container bck1 padded">
+
+<div class="m-5 pt-5">
     {% block body %}
     {% endblock %}
 </div>
 
-<div class="d-flex align-items-end">
-    <footer class="page-footer">
-      <div class="card-body">
-          <p>2019-2020 © Local Tous droits réservés.
-          </p>
+
+    <footer class="page-footer" style="background-color: rgba(194, 169, 217, 0.25);">
+        <!-- Footer -->
+        <footer class="page-footer font-small blue-grey lighten-5">
 
 
-              <p class="copy m-b-10">
-                  <img src=" class="pull-left m-b-10" alt="WWF" width="55">
-                  La quittance électronique, c'est pratique, gratuit et vous faites un geste pour l'environnement.
-                  Pour éviter d'augmenter la pression sur les forêts, diminuez votre consommation de papier.
-                  <a href="https://www.worldwildlife.org/initiatives/forests" onclick="target='_blank';">WWF</a>
-              </p>
+            <div style="background-color: #c2a9d9;">
+                <div class="container mt-5">
 
-          </div>
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0">Connectez-vous avec nous sur les réseaux sociaux!</h6>
+                        </div>
+                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                            <!-- Facebook -->
+                            <a class="fb-ic">
+                                <i class="fab fa-facebook-f white-text mr-4"> </i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="tw-ic">
+                                <i class="fab fa-twitter white-text mr-4"> </i>
+                            </a>
+                            <!-- Google +-->
+                            <a class="gplus-ic">
+                                <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic">
+                                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                            </a>
+                            <!--Instagram-->
+                            <a class="ins-ic">
+                                <i class="fab fa-instagram white-text"> </i>
+                            </a>
+
+                        </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+                <!-- Grid row -->
+                <div class="row mt-3 dark-grey-text">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold"> <i class="fas fa-leaf"></i> Notre engagement</h6>
+                        <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 60%; border: 1px solid #c2a9d9 ">
+
+                        <p>La quittance électronique, c'est pratique, gratuit et vous faites un geste pour l'environnement.
+                            Pour éviter d'augmenter la pression sur les forêts, diminuez votre consommation de papier. WWF</p>
+
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-xl-2 mx-auto mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold"><i class="fas fa-street-view"></i> Local</h6>
+                        <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 50%; border: 1px solid #c2a9d9 ">
+                        <p>
+                            <a class="dark-grey-text" href="#!">Qui somme nous ? </a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="{{ path('contact') }}">Nous contacter</a>
+
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Publicité</a>
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold"><i class="fas fa-info"></i> Aide</h6>
+                        <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 50%; border: 1px solid #c2a9d9 ">
+                        <p>
+                            <a class="dark-grey-text" href="#!">FAQ</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Centre d'aide</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-2 mx-auto mb-md-0 mb-4">
+
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold"><i class="fas fa-balance-scale-left"></i> Legal</h6>
+                        <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 50%; border: 1px solid #c2a9d9 ">
+                        <p>
+                            <a class="dark-grey-text" href="#!">Condition</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Confidentialité</a>
+                        </p>
 
 
-        <div class="span2 pull-right">
-            <ul>
-                <li><h5>Local</h5></li>
-                <li><a href="">Qui nous-sommes?</a></li>
-                <li><a href="">Publicité</a></li>
+                    </div>
 
-                <li><a href="{{ path('contact') }}">Nous contacter</a></li>
-                <li><a href="https://www.facebook.com/rentilacom" target="_blank"><span aria-hidden="true" class="icon-facebook"></span></a>
-                    <a href="https://twitter.com/rentila" target="_blank"><span aria-hidden="true" class="icon-twitter"></span></a>
-                    <a href="https://instagram.com/rentilagram/" target="_blank"><span aria-hidden="true" class="icon-instagram"></span></a>
-                    <a href="https://www.linkedin.com/company/rentila" target="_blank"><span aria-hidden="true" class="icon-linkedin2"></span></a>
-                </li>
-            </ul>
-        </div>
-        <div class="span2 pull-right">
-            <ul>
-                <li><h5>CGU</h5></li>
-                <li><a href="">Conditions</a></li>
-                <li><a href="">Confidentialité</a></li>
-            </ul>
-        </div>
-        <div class="span2 pull-right">
-            <ul>
-                <li><h5>Aide</h5></li>
-                <li><a href="">Centre d'aide</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
-        </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-3">
 
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold"><i class="fab fa-app-store-ios"></i> APPS MOBILES</h6>
+                        <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 60%; border: 1px solid #c2a9d9 ">
+                        <p>
+                            <a class="dark-grey-text" href="#!">Android</a>
+                        </p>
+                        <p>
+                            <a class="dark-grey-text" href="#!">Appel</a>
+                        </p>
+                    </div>
 
-</footer>
+                </div>
 
-</div>
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+                <a href="{{ path('homepage') }}">Local.fr</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+    </footer>
 
 
-{% block javascripts %}{% endblock %}
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Local{% endblock %}</title>
+    <title>{% block title %}RELATION{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -11,13 +11,13 @@
 {% block body %}
 
     <div class="container">
+        <h1 class="text-center">Local</h1>
+        <p class="text-center">Ouvrir un compte gratuit</p>
+        <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
+            !</p>
         <div class="col-6 offset-3">
             <div class="card bg-light">
                 <div class="card-body">
-                    <h1 class="text-center">Local</h1>
-                    <p class="text-center">Ouvrir un compte gratuit</p>
-                    <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
-                        !</p>
                     {{ form_start(registrationForm) }}
                     <div class="card-body">
 
@@ -40,14 +40,18 @@
                         {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'placeholder': ' Confirmation du mot de passe'} }) }}
                     </div>
 
+                        <div class="card-body">
+
                     {{ form_row(registrationForm.agreeTerms) }}
+                        </div>
 
                     <button class="btn btn-outline-primary btn-sm btn-block">Inscription</button>
                     {{ form_end(registrationForm) }}
 
 
                     <div class="card-body">
-                        <a href="{{ path('app_login') }}">Deja un compte ? Cliquez-ici</a>
+                        <a href="{{ path('app_login') }}"><i class="fab fa-battle-net fa-1x"></i>
+                            Deja un compte ? Cliquez-ici</a>
                     </div>
                 </div>
 
@@ -58,11 +62,17 @@
     </div>
     <div class="card-body">
     <footer class="page-footer">
-        <div class="container text-center">
-            <div class="card-body text-center">En vous inscrivant, vous reconnaissez avoir lu et
-                accepté les Conditions d'utilisation et la Politique de confidentialité.</div>
+        <div class="card-body text-center">
 
-            <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
+            <p>En vous inscrivant, vous reconnaissez avoir lu et
+                accepté les <a
+                        href="{{ path('contact') }}">Condition d'utilisation</a> et la
+                <a
+                        href="{{ path('contact') }}">Politique de confidentialité.</a></p>
+        </div>
+
+        <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+            <a class="dark-grey-text" href="">Relation.fr</a>
         </div>
     </footer>
 

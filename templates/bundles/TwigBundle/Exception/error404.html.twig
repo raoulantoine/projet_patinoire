@@ -1,18 +1,28 @@
 {# templates/bundles/TwigBundle/Exception/error404.html.twig #}
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}404{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
 
 {% block body %}
-    <h1>Page non trouvée </h1>
 
-    <p>
-        La page que vous cherchez n'a pas été trouvée <a href="{{ path('homepage') }}">return to the homepage</a>.
-    </p>
 
-    <p>
-        Code de l'erreur : {{ status_code }}
-    </p>
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>4<span></span>4</h1>
+        </div>
+        <h2>Oops! Page introuvable</h2>
+        <p>Désolé mais la page que vous recherchez n'existe pas, a été supprimée. le nom a changé ou est temporairement indisponible</p>
+        <a href="{{ path('homepage') }}">retour vers l'accueil</a>
+    </div>
+</div>
 
-    <p>
-        Message de l'erreur : {{ status_text }}
-    </p>
+
+
 {% endblock %}

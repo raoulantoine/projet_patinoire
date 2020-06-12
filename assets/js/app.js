@@ -8,6 +8,7 @@
 // any CSS you import will output into a single css file (app.scss in this case)
 import '../css/app.scss';
 
+
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
@@ -25,6 +26,14 @@ $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
+$(document).ready(function() {
+
+    // SideNav Button Initialization
+    $(".button-collapse").sideNav();
+    // SideNav Scrollbar Initialization
+    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(sideNavScrollbar);
+});
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 

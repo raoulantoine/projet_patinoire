@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -22,15 +23,14 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login")
      * @param AuthenticationUtils $authenticationUtils
+     * @param AuthorizationCheckerInterface $authorizationChecker
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, AuthorizationCheckerInterface $authorizationChecker): Response
     {
-        // if ($this->getUser()) {
-        //    $this->redirectToRoute('target_path');
-        // }
-
-        // get the login error if there is one
+        if ($authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            return $this->redirectToRoute('homepage');
+        }
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();

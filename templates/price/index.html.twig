@@ -3,18 +3,193 @@
 {% block title %}Hello PriceController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1 margin10">
+                <h1>Voici nos tarifs bon marché</h1>
+                <p class="center lead">L'ouverture du compte et l'utilisation du site Rentila est <strong>Gratuite</strong>, néanmoins si vous comptez gérer <strong>plus de 1 bien</strong> vous devrez <strong>souscrire un abonnements PRO</strong> (déductible de vos impôts).<br>
+                    <br>Vous êtes <b>gestionnaire de biens</b>? <a href="mailto:contact@rentila.com" class="link underlined">Cliquez ici</a> pour nous contacter.<br>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                </p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/src/Controller/PriceController.php'|file_link(0) }}">src/Controller/PriceController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/templates/price/index.html.twig'|file_link(0) }}">templates/price/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+            </div>
+        </div>
+    </div>
+
+    <section id="works">
+        <div class="container">
+            <!--start works header-->
+
+            <div id="switch" class="row-fluid">
+                <div class="pricing-switcher">
+                    <div class="fieldset">
+                        <input type="radio" name="group-a" value="monthly" id="monthly-1" checked="">
+                        <label for="monthly-1">Mensuel</label>
+                        <input type="radio" name="group-a" value="annual" id="annualy-1">
+                        <label for="annualy-1">Annuel</label>
+                        <span class="switch"></span>
+                    </div>
+                </div>
+            </div>
+            <!--start Prices-->
+            <!-- 3 rows Monthly Price list -->
+            <div id="monthly" class="row-fluid">
+                <div class="price-table price-table-three">
+                    <div class="price-column  price-column-first">
+                        <h4>Silver</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value" style="color: #74bede">4€<sup>HT</sup></span><span class="price-period">par mois</span><br>
+                                    <img src="/img/coffee_cup_green.png" alt="Un cafe à Paris" width="64" style="margin: 3px 1px;"><br>
+                                    <span class="price-anum">ou <strong>40€</strong> HT avec un paiement annuel<br> Montant déductible de vos impôts</span></div>
+                            </li>
+                            <li><strong>2 - 5</strong> Biens</li>
+                            <li>Locataires illimités</li>
+                            <li>Locations illimitées</li>
+                            <li>Etats des lieux illimités</li>
+                            <li><strong>500 Mo</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>Multi-utilisateur</li>
+                            <li>et beaucoup plus...</li>
+                        </ul>
+                    </div>
+                    <div class="price-column price-column-featured">
+                        <h4>GRATUIT</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value">0€</span><span class="price-period">par mois</span><br>
+                                    <img src="/img/present.png" alt="Cadeau" width="48" style="margin: 6px 1px;"><br>
+                                    <span class="price-anum">Pas de café pour nous...<br>Le service vous est Offert</span></div>
+                            </li>
+                            <li>Limité à <strong>1 Bien</strong></li>
+                            <li>Limité à <strong>2 Locataires</strong></li>
+                            <li>Limité à <strong>2 Locations</strong></li>
+                            <li>Limité à <strong>4 Etats des lieux</strong></li>
+                            <li><strong>50 Mo</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>et beaucoup plus...</li>
+                            <li class="last"><a href="/register" class="button-home green smaller">Inscription <span class="hidden-phone">&nbsp;GRATUITE</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="price-column  price-column-last">
+                        <h4>GOLD</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value" style="color: #fd8500;">8€<sup>HT</sup></span><span class="price-period">par mois</span><br>
+                                    <img src="/img/coffee_cup_green_croissant.png" alt="Un cafe et croissant à Paris" width="64" style="margin: 3px 1px;"><br>
+                                    <span class="price-anum">ou <strong>80€</strong> HT avec un paiement annuel<br> Montant déductible de vos impôts</span></div>
+                            </li>
+                            <li>Biens illimités</li>
+                            <li>Locataires illimités</li>
+                            <li>Locations illimitées</li>
+                            <li>Etats des lieux illimités</li>
+                            <li><strong>5 Go</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>Multi-utilisateur</li>
+                            <li>et beaucoup plus...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // 3 rows Price list -->
+
+            <!-- 3 rows Annual Price list -->
+            <div id="annual" class="row-fluid hide">
+                <div class="price-table price-table-three">
+                    <div class="price-column  price-column-first">
+                        <h4>Silver</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value" style="color: #74bede">40€<sup>HT</sup></span><span class="price-period">par an</span><br>
+                                    <img src="/img/coffee_cup_green.png" alt="Un cafe à Paris" width="64" style="margin: 3px 1px;"><br>
+                                    <span class="price-anum">Montant déductible de vos impôts</span></div>
+                            </li>
+                            <li><strong>2 à 5</strong> Biens</li>
+                            <li>Locataires illimités</li>
+                            <li>Locations illimitées</li>
+                            <li>Etats des lieux illimités</li>
+                            <li><strong>500 Mo</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>et beaucoup plus...</li>
+                        </ul>
+                    </div>
+                    <div class="price-column price-column-featured">
+                        <h4>GRATUIT</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value">0€</span><span class="price-period">par an</span><br>
+                                    <img src="/img/present.png" alt="Cadeau" width="48" style="margin: 6px 1px;"><br>
+                                    <span class="price-anum">Pas de café pour nous...<br>Le service vous est Offert</span></div>
+                            </li>
+                            <li>Limité à <strong>1 Bien</strong></li>
+                            <li>Limité à <strong>2 Locataires</strong></li>
+                            <li>Limité à <strong>2 Locations</strong></li>
+                            <li>Limité à <strong>4 Etats des lieux</strong></li>
+                            <li><strong>50 Mo</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>et beaucoup plus...</li>
+                            <li class="last"><a href="/register" class="button-home green smaller">Inscription <span class="hidden-phone">&nbsp;GRATUITE</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="price-column  price-column-last">
+                        <h4>GOLD</h4>
+                        <ul>
+                            <li class="first">
+                                <div class="price-tag"><span class="price-value" style="color: #fd8500;">80€<sup>HT</sup></span><span class="price-period">par an</span><br>
+                                    <img src="/img/coffee_cup_green_croissant.png" alt="Un cafe et croissant à Paris" width="64" style="margin: 3px 1px;"><br>
+                                    <span class="price-anum">Montant déductible de vos impôts</span></div>
+                            </li>
+                            <li>Biens illimités</li>
+                            <li>Locataires illimités</li>
+                            <li>Locations illimitées</li>
+                            <li>Etats des lieux illimités</li>
+                            <li><strong>5 Go</strong> de stockage</li>
+                            <li>Modèles de lettres</li>
+                            <li>et beaucoup plus...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // 3 rows Price list -->
+
+            <div class="row">
+                <div class="span10 offset1 m-t-50">
+                    <h3>Questions fréquentes</h3>
+                    <div class="row">
+                        <div class="span5">
+                            <p><b>Est-ce vraiment gratuit?</b><br>
+                                Oui, le compte gratuit Rentila est limité à 1 bien, 2 locations, 2 locataires. Si vous gérez plus de biens il faudrait acheter un compte PRO.
+                                <br><br>
+                                <b>Et la sécurité de mes données?</b><br>
+                                Nous vous invitons de consulter les pages <a href="/terms">CGU</a> et <a href="/privacy">Confidentialité</a> et prendre connaissance des mesures de protection de vos données.
+
+                            </p>
+                        </div>
+
+                        <div class="span5">
+                            <p><b>Quelle est la durée de l’engagement?</b><br>
+                                Il n’y a pas de durée d’engagement. Vous pouvez arrêter votre abonnement payant à tout moment.
+                                <br><br>
+                                <b>Est-ce que mes locataires peuvent utiliser votre service?</b><br>
+
+                                Oui, c’est le but. Rentila.com a été créé pour aider locataires et propriétaires dans leurs interactions: suivi des loyers et des paiements, quittances,relances, révision de loyer, régularisation des charges... </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="span8 offset2">
+                    <h4><span aria-hidden="true" class="icon-checkmark"></span> Pas d'engagement <span aria-hidden="true" class="icon-checkmark"></span> Pas de période d'essai  <span aria-hidden="true" class="icon-checkmark"></span> Démarrez en 3 minutes</h4>
+                    <p class="center lead">Nous aidons déjà <b>plusieurs milliers de bailleurs</b> avec leur gestion locative!<br> Vous serez en bonne compagnie!	</p>
+                    <br>
+                    <p class="center focus">Les frais de gestion (achat de modèles types de contrat de location, frais de correspondance, téléphone, etc.) sont déductibles pour un montant forfaitaire de <strong>20 € par an et par logement</strong> (<a href="http://bofip.impots.gouv.fr/bofip/5804-PGP" target="_blank" class="blue">source</a>). <strong>L'utilisation de Rentila reste donc pratiquement Gratuite, l'abonnement est déductible de vos impôts.</strong></p>
+                    <br>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

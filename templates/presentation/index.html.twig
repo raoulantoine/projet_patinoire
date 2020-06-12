@@ -4,18 +4,274 @@
 {% block title %}Hello PresentationController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section id="works">
+        <div class="container">
+            <div class="divider"></div>
+            <div class="row divide">
+                <div class="span10 offset1 m-t-50">
+                    <h3>Oubliez la paperasse, bienvenue en <script>document.write(new Date().getFullYear())</script>2020</h3>
+                    <p class="center lead"><b>Suivi des loyers</b> et des paiements, <b>quittances automatiques</b>, suivi des charges, rappels, révisions, relances... Les différentes étapes de la vie du contrat de location sont couvertes par notre logiciel.</p><br><br>
+                </div>
+            </div>
+            <!-- Start Scrubber -->
+            <div class="row">
+                <!--SCRUBBER section - DESKTOP-->
+                <section class="scrubber center">
+                    <div class="wrapper-scrubber">
+                        <div id="js-scrubber-wrap" class="scrubber-stage">
+                            <div class="scrubber-left">
+                                <img alt="Sans rentila c'est la galère" src="/img/scrubber_icon_l.png">
+                            </div>
+                            <div class="scrubber-middle">
+                                <div id="js-scrubber-handle" class="scrubber-handle"></div> <!--LEFT-->
+                                <div class="scrubber-before"> <!--WIDTH-->
+                                    <h4>LA GESTION AVANT</h4>
+                                    <div></div>
+                                </div>
+                                <div class="scrubber-after"> <!--WIDTH-->
+                                    <h4>RENTILA <b>SIMPLIFIE</b> TOUT</h4>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="scrubber-right">
+                                <img alt="Rentila Simplifie la gestion locative" src="/img/scrubber_icon_r.png">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--end of SCRUBBER section - DESKTOP-->
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                <!--SCRUBBER section - MOBILE-->
+                <section class="scrubber-mobile js-scrubber-mobile">
+                    <div class="scrubber-mobile-item">
+                        <center><span class="lead">LA GESTION AVANT</span><br> Une organisation bien complexe</center>
+                        <img alt="Sans rentila c'est la galère" width="100%" src="/img/scrubber_before.png">
+                    </div>
+                    <div class="scrubber-mobile-item">
+                        <center><span class="lead">RENTILA <b>SIMPLIFIE</b> TOUT </span><br> Tout est bien organisé</center>
+                        <img alt="Rentila Simplifie la gestion locative" width="100%" src="/img/scrubber_after_m.png">
+                    </div>
+                </section>
+                <!--end of SCRUBBER section - MOBILE-->
+            </div>
+            <!-- End Scrubber -->
+            <div class="divider"></div>
+            <div class="row divide m-b-0">
+                <div class="span12 m-t-50">
+                    <h3>A qui s'adresse ce logiciel?</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <center>
+                        <img src="/img/works/tour_landlord.png" width="330" alt="Pour les Bailleurs">
+                        <h2>Pour les Bailleurs</h2>
+                    </center>
+                    <br>
+                    <p class="lead">Rentila s'adresse aux <b>particuliers, propriétaires bailleurs</b> qui gèrent leur patrimoine immobilier locatif eux mêmes: appartements, maisons, garages etc... Nous vous donnons à dispositions tous les outils nécessaire pour <b>assurer vous-même la gestion locative</b> de vos biens.
+                    </p>
+                    <p></p><center><a href="/register" class="m-btn transparent" style="min-width: 250px;"> DEMO PROPRIETAIRE</a></center><p></p>
+                </div>
+                <div class="span6">
+                    <center>
+                        <img src="/img/works/tour_tenant.png" width="330" alt="Pour les Locataires">
+                        <h2>Pour les Locataires</h2>
+                    </center>
+                    <br>
+                    <p class="lead">Le site existe aussi pour aider <b>locataires et propriétaires</b> dans leurs interactions: suivi des loyers et des paiements, quittances et avis d'échéance, messages, suivi des travaux et des interventions, rappels et relances, révision de loyer, régularisation des charges...</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/src/Controller/PresentationController.php'|file_link(0) }}">src/Controller/PresentationController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/patinoire/local/templates/presentation/index.html.twig'|file_link(0) }}">templates/presentation/index.html.twig</a></code></li>
-    </ul>
-</div>
+                    <p></p><center><a href="/tenant/demo" class="m-btn transparent" style="min-width: 250px;">DEMO LOCATAIRE</a></center><p></p>
+
+                </div>
+            </div>
+
+
+            <div class="divider"></div>
+
+            <div class="row divide tour">
+                <div class="span10 offset1 m-t-50">
+                    <h3>Gérer vos biens immobiliers n’a jamais été aussi facile !</h3>
+                    <p class="center lead">Rentila vous donne tous <b>les outils professionnels</b> et <b>vous assiste</b> avec la gestion de votre bien.
+                        Optimisez votre <b>rendement locatif</b>. Nous sommes là pour vous aider!</p><br><br>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_bureau.png" alt="Mon Bureau">
+                </div>
+                <div class="span6 divide">
+                    <h3>Mon Bureau</h3>
+                    <p class="lead"><b>Consultez toutes vos données en un clin d'œil</b> sur le tableau de bord. Un aperçu global de vos revenus et dépenses, alertes, les derniers news immobilières, documents utiles...</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Locations / Locataires</h3>
+                    <p class="lead"><b>Gestion facile de vos locations / locataires. </b> Créez les fiches détaillées de vos biens et vos locataires. Liez les ensuite en créant vos contrats de locations et téléchargez un modèle de bail pré-rempli.</p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_locataires.png" alt="Locations / Locataires">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_bail.png" alt="Bail pré-rempli">
+                </div>
+                <div class="span6 divide">
+                    <h3>Bail pré-rempli</h3>
+                    <p class="lead">Créez le local, le locataire et la location et obtenez un <b>Contrat de bail pré-rempli</b> prêt à imprimer et signer (disponible pour les locations vide, meublé et parking/garage).</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Etat des lieux</h3>
+                    <p class="lead">Créez vos <b>états des lieux d'entrée et de sortie</b>. Décrivez les pièces, les équipements et leur état de fonctionnement. Ajoutez des photos pour compléter. Téléchargez et imprimez votre document prêt à être signé. </p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_edl.png" alt="Etat des lieux">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_inventaire.png" alt="Inventaire des meubles">
+                </div>
+                <div class="span6 divide">
+                    <h3>Inventaire des meubles</h3>
+                    <p class="lead">Créez vos <b>inventaires des meubles</b>, décrivez les équipements de votre logement et leur état de fonctionnement. Téléchargez un document prêt à imprimer et signer.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Location saisonnière</h3>
+                    <p class="lead"><b>Gestion facile de vos réservations pour la location saisonnière. </b> Créez vos réservations, les factures sont générées dans la rubrique Finances. Téléchargez un modèle de bail pré-rempli.</p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_reservation.png" alt="Location saisonnière">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_calendar.png" alt="Calendrier des réservations">
+                </div>
+                <div class="span6 divide">
+                    <h3>Calendrier des réservations</h3>
+                    <p class="lead"><b>Consultez toutes vos réservations en un clin d'œil</b>. Votre calendrier vous donne un aperçu global de vos occupations...</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Gestion des Finances</h3>
+                    <p class="lead"><b>Gestion de vos revenus et dépenses foncières.</b> La comptabilité de tous vos biens immobiliers. Chaque mois, vos revenus locatifs sont ajoutés dans la rubrique Finances, vous pouvez intégrer vos dépenses diverses... </p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_finances.png" alt="Gestion des Finances">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_bilan.png" alt="Bilan Financier">
+                </div>
+                <div class="span6 divide">
+                    <h3>Bilan Financier</h3>
+                    <p class="lead">Avec Rentila <b>simplifiez-vous la déclaration de vos revenus fonciers</b>. Grace à notre bilan financier retrouvez toutes les informations nécessaires pour remplir votre déclaration d'impôts. </p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Quittances automatiques</h3>
+                    <p class="lead"><b>Quittances et avis d'échéances électroniques générées automatiquement</b> chaque mois. Vous pouvez les éditer, les envoyer par email, les télécharger pour les imprimer et envoyer par la poste à votre locataire...  </p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_quittance.png" alt="Quittances automatiques">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_documents.png" alt="Mes Documents">
+                </div>
+                <div class="span6 divide">
+                    <h3>Mes Documents</h3>
+                    <p class="lead"><b>Archivez vos documents scannés</b> (photos, factures, impôts, charges…). Classez et organisez les dans votre coffre-fort numérique. Partagez les avec votre locataire (propriétaire).</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Modèles utiles</h3>
+                    <p class="lead">Accédez à notre <b>bibliothèque de documents dédiée à la gestion locative</b> et trouvez des modèles de lettres et autres documents utiles. </p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_documents1.png" alt="Modèles utiles">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_interventions.png" alt="Interventions">
+                </div>
+                <div class="span6 divide">
+                    <h3>Interventions</h3>
+                    <p class="lead">Grace au module <b>Interventions</b>, vous pouvez facilement suivre et gérer les divers travaux et interventions chez les locataires...</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span6 divide">
+                    <h3>Tâches</h3>
+                    <p class="lead">Créez des <b>tâches</b> et <b>rappels</b> pour ne jamais oublier les choses importantes (attestation d'assurance, renouvellement du contrat d'entretien de la chaudière...). </p>
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_tasks.png" alt="Tâches">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="row divide tour">
+                <div class="span12">
+                </div>
+                <div class="span6">
+                    <img src="/img/works/screen_candidates.png" alt="Divers Outils">
+                </div>
+                <div class="span6 divide">
+                    <h3>Candidats</h3>
+                    <p class="lead">La rubrique <b>Candidats</b> vous permets de recevoir des candidatures pour vos annonces et de mieux gérer et organiser votre recherche de locataire. </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 {% endblock %}

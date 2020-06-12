@@ -17,6 +17,8 @@ class HousingController extends AbstractController
 {
     /**
      * @Route("/", name="housing_index", methods={"GET"})
+     * @param HousingRepository $housingRepository
+     * @return Response
      */
     public function index(HousingRepository $housingRepository): Response
     {

@@ -185,6 +185,12 @@ class User implements \Symfony\Component\Security\Core\User\UserInterface
         return $this;
     }
 
+    public function __toString()
+
+    {
+        return $this->getUsername();
+    }
+
     /**
      * @inheritDoc
      */
@@ -210,7 +216,7 @@ class User implements \Symfony\Component\Security\Core\User\UserInterface
      */
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->email;
     }
 
     /**

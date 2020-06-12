@@ -1,25 +1,244 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}RELATION.{% endblock %}
 
 {% block body %}
 
-    <div class="example-wrapper">
-        <h1 class="text-center">Gérez vos biens immobiliers avec le meilleur logiciel gratuit de gestion locative immobilière </h1>
-        <p class="text-center">Rentila est le meilleur logiciel de gestion locative immobilière en ligne. Suivi des loyers et charges,
+    <div class="row">
+        <div class="offset-1">
+        <h1 class="text-uppercase text-center mt-5"style="font-size: 30px;">Gérez vos biens immobiliers avec le logiciel gratuit de gestion locative
+            immobilière </h1>
+            <p class="text-center">Relation est un logiciel de gestion locative immobilière en ligne. Suivi des loyers et
+            charges,
             comptabilité, aide à la déclaration des revenus fonciers... Les différentes étapes de la vie du contrat de
             location sont couvertes par notre site.</p>
+        </div>
+        </div>
 
 
-        {% if app.user %}
 
-            <div class="mb-3">
-                You are logged in as {{ app.user.fistname }}  {{ app.user.lastname }}, <a
-                        href="{{ path('app_logout') }}">Logout</a>
+
+{#
+    {% if app.user %}
+
+        <div class="mb-3">
+            You are logged in as {{ app.user.fistname }}  {{ app.user.lastname }}, <a
+                    href="{{ path('app_logout') }}">Logout</a>
+        </div>
+
+
+
+    {% endif %}#}
+
+
+
+    <div class="card-body">
+        <h3 class="text-uppercase text-center">Comment ça marche ?</h3>
+        <hr  style="width: 10%; border: 1px solid #c2a9d9 ">
+        <p class="text-center">Configurez votre compte en 3 minutes en suivant ces 3 étapes... </p>
+    </div>
+
+    <div class="row text-center">
+
+
+        <div class="col-md-1 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+            <div class="card-body">
+                <i class="fab fa-fort-awesome fa-3x" style="color:#321A47"></i>
+            </div>
+            <h5><b>1.</b> Créer un bien</h5>
+            <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 40%; border: 1px solid #c2a9d9 ">
+            <p>APPARTEMENTS, MAISONS, PARKINGS...</p>
+            <p>Créez la fiche détaillée de votre Local (appartement, maison, parking...). Adresse, surface, équipements
+                etc. </p>
+        </div>
+
+
+        <div class="col-md-1 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+            <div class="card-body">
+                <i class="fas fa-female fa-3x" style="color:#321A47"></i> <i class="fas fa-male fa-3x"
+                                                                             style="color:#321A47"></i>
+            </div>
+            <h5><b>2.</b> Créer un locataire</h5>
+            <hr class="teal accent-3 mb-2 mt-0 d-inline-block mx-auto" style="width: 40%; border: 1px solid #c2a9d9 ">
+            <p>LOCATAIRES ET COLOCATAIRES</p>
+            <p>Créez la fiche détaillé de votre Locataire. Nom, prénoms, adresse, téléphone, informations sur les
+                garants...</p>
+        </div>
+
+
+        <div class="col-md-1 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-2">
+            <div class="card-body">
+                <i class="fas fa-key fa-3x" style="color:#321A47"></i>
+            </div>
+            <h5><b>3.</b> Créer une location</h5>
+            <hr class="teal accent-3 mb-3 mt-0 d-inline-block mx-auto" style="width: 40%; border: 1px solid #c2a9d9 ">
+            <p>LE CONTRAT DE BAIL</p>
+            <p>Liez votre Local et votre Locataire dans une Location. Indiquez la durée, le montant du loyer et
+                charges...</p>
+        </div>
+    </div>
+
+    <div class="row divide">
+        <div class="span8 offset2 m-t-50">
+            <h3>Rentila vous assiste avec votre gestion locative</h3>
+            <p class="center lead">Le site <b>automatise la création de vos Quittances</b> et vos <b>contrats de location</b>... Pour chaque contrat de location, les loyers et les Quittances électroniques sont générés automatiquement chaque mois. <br><br>
+                Rentila est noté <b>4.8</b> <span aria-hidden="true" class="icon-star orange"></span> <span aria-hidden="true" class="icon-star orange"></span> <span aria-hidden="true" class="icon-star orange"></span> <span aria-hidden="true" class="icon-star orange"></span> <span aria-hidden="true" class="icon-star orange"></span> de 5  d'après plus de 1000 utilisateurs.
+
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="span4">
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-lock-alt green"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Compte sécurisé</h4>
+                    <p class="opacity-70">Peu importe où vous êtes, 24/24, 7j/7, accédez facilement à votre portefeuille immobilier en ligne.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-coins orange"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Gestion des comptes</h4>
+                    <p class="opacity-70">Nous vous proposons un outil simple pour gérer vos dépenses et revenus fonciers. Vous pouvez aussi générer un bilan financier pour vous aider avec votre déclaration d’impôts.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-file-invoice blue"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Quittances électroniques</h4>
+                    <p class="opacity-70">Fini le papier. Profitez dès maintenant de tous les avantages du service e-quittance : visualisez votre dernière quittance en ligne, imprimez-la, archivez-la, téléchargez-la ou consultez l’une de vos quittances précédentes.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-tools"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Gestion des travaux et interventions</h4>
+                    <p class="opacity-70">Module de suivi des travaux et interventions chez le locataire.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="span4">
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-file-signature blue"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Modèle de Bail pré-rempli</h4>
+                    <p class="opacity-70">
+                        Créez votre Location et obtenez un modèle type de bail de location (vide, meublé, commercial) pré-rempli qui respecte la législation.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-signal-alt-2 green"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Révision de loyer</h4>
+                    <p class="opacity-70">Outil en ligne permettant la révision annuelle du loyer par rapport à l'indice de référence des loyers (IRL) et l'indice des loyers commerciaux (ILC).</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-calculator-alt"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Régularisation des charges</h4>
+                    <p class="opacity-70">Calcul de régularisation des charges locatives récupérables et génération du document à envoyer au locataire.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-archive red"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Archivage électronique</h4>
+                    <p class="opacity-70">Archivez vos documents scannés (photos, factures, impôts, charges…) et partagez les avec votre locataire (propriétaire).</p>
+                </div>
             </div>
 
-        {% endif %}
+        </div>
 
+        <div class="span4">
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-calendar-alt red"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Système de réservations</h4>
+                    <p class="opacity-70">Des outils nécessaires à la gestion de vos calendriers et réservations pour les locations saisonnières. </p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-comment-dots orange"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Système de messagerie</h4>
+                    <p class="opacity-70">Système de communication facile entre propriétaires et locataires via notre messagerie interne. </p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-comments-alt blue"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Forum de discussion</h4>
+                    <p class="opacity-70">Echangez avec les autres propriétaires. Posez vos questions et trouvez des réponses sur notre forum de discussion dédié à nos utilisateurs.</p>
+                </div>
+            </div>
+            <div class="feature-box hvr-grow">
+                <div class="feature-box-icon">
+                    <span class="fad fa-toolbox"></span>
+                </div>
+                <div class="feature-box-info">
+                    <h4 class="shorter">Divers outils</h4>
+                    <p class="opacity-70">Modèles de lettres utiles, carnet d’adresses, devis travaux, côte des loyers...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <span class="lead">Gérer vos biens en location n’a jamais été aussi facile!</span>
+    </div>
+
+    <div class="span8 offset2">
+        <h3>Besoin d'une visite guidée?</h3>
+        <p class="center lead">Rentila existe pour aider locataires et propriétaires dans leurs interactions.<br> Plus de <b>30 000 bailleurs</b> gèrent près de <b>100 000 biens</b> et nous font confiance avec leur comptabilité...</p>
+        <br>
+        <div class="row">
+            <div class="span4 text-center fs-11 m-b-20" style=" float:left; margin-top:0px; color: #333333;">
+                <span class="green bold fs-40">148 305 284€</span><br>
+                REVENU MENSUEL DE NOS UTILISATEURS
+            </div>
+
+            <div class="span4 text-center fs-11 m-b-20" style=" display:inline-block; margin-top:0px; color: #333333;">
+                <span class="red bold fs-40">20 805 937€</span><br>
+                DEPENSES MENSUELLES DE NOS UTILISATEURS
+            </div>
+        </div>
+        <br>
+        <p class="center m-t-10">
+            <a href="/register" title="OUVRIR UN COMPTE" class="button-home green" style="">OUVRIR UN COMPTE &nbsp;<span>&nbsp; GRATUIT</span>
+            </a>
+        </p>
+        <h4><span aria-hidden="true" class="icon-checkmark"></span> Pas d'engagement <span aria-hidden="true" class="icon-checkmark"></span> Pas de période d'essai <span aria-hidden="true" class="icon-checkmark"></span> Démarrez en 3 minutes</h4>
+        <p class="center">
+            <img class="m-t-20" src="/img/press_fr.png" style="width: 85%;" alt="Press">
+        </p>
     </div>
 
 {% endblock %}

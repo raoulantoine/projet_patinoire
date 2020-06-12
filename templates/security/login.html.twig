@@ -2,95 +2,116 @@
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Local{% endblock %}</title>
+    <title>{% block title %}RELATION{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 {% block body %}
-    <div class="container">
-        <div class="col-6 offset-3">
-            <div class="card bg-light">
-                <div class="card-body">
-                    <h1 class="text-center">Connexion à votre compte</h1>
-                    <p class="text-center">Ouvrir un compte gratuit</p>
-                    <p class="text-center">Créer de meilleures relations entre les propriétaires et les locataires
-                        !</p>
 
-                    {#methode de connexion avec redirection#}
-                    <form method="post">
-                        {% if error %}
-                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                        {% endif %}
-                        {% if app.user %}
-                            <div class="mb-3">
-                                You are logged in as {{ app.user.username }}, <a
-                                        href="{{ path('app_logout') }}">Logout</a>
+
+{#methode de connexion avec redirection#}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a
+                    href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <div class="text-center">
+                                    <img src="{{ asset('build/logo.png') }} " width="100" height="100"
+                                         alt="Relation-logo">
+                                </div>
+                                <h3 class="login-heading mb-4 text-center">Connexion à votre compte</h3>
+                                <p class="text-center">Ouvrir un compte gratuit</p>
+                                <p class="text-center">Créer de meilleures relations entre
+                                    les propriétaires et les locataires !</p>
+
+                                <form>
+                                    <div class="form-label-group">
+                                        <input type="email" value="{{ last_username }}" name="email"
+                                               id="inputEmail" class="form-control" required autofocus
+                                               placeholder="Email">
+                                        <label for="inputEmail">Email</label>
+                                    </div>
+
+
+                                    <div class="form-label-group">
+                                        <input type="password" name="password" id="inputPassword"
+                                               class="form-control" placeholder="Mot de passe" required>
+                                        <label for="inputPassword">Mot de passe</label>
+                                        <input type="hidden" name="_csrf_token"
+                                               value="{{ csrf_token('authenticate') }}">
+                                    </div>
+
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" id="cbx" style="display: none;">
+                                        <label for="cbx" class="check">
+                                            <svg width="19px" height="19px" viewBox="0 0 18 18">
+                                                <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                                                <polyline points="1 9 7 14 15 4"></polyline>
+                                            </svg>
+
+                                        </label>
+                                        Se souvenir de moi
+                                    </div>
+
+
+                                    {#bouton connexion#}
+                                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                                            type="submit">Connexion
+                                    </button>
+                                    <div class="text-center">
+                                        <a href="{{ path('app_forgotten_password') }}">
+                                            <i class="fas fa-lock"></i>
+                                            Mot de passe oublié ?
+                                        </a>
+
+
+                                        <div class="text-center w-full p-t-42 p-b-22">
+                                            <span class="txt1">
+							                     Or login with
+                                            </span>
+
+
+
+                                        <hr>
+                                        <a href="{{ path('app_register') }}">
+                                            <i class="fa fa-user-plus"></i>
+                                            Pas de compte ? Cliquez ici.
+                                        </a>
+                                    </div>
+                                </form>
                             </div>
-                        {% endif %}
-
-                        {#email #}
-                        <div class="form-group">
-                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
-                                   class="form-control" required autofocus placeholder="Email">
                         </div>
-                        {# mot de passe  #}
-                        <div class="form-group">
-                            <input type="password" name="password" id="inputPassword" class="form-control"
-                                   placeholder="Mot de passe" required>
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        </div>
-
-
-                        {#route mot de passe oublé#}
-                        <div class="container">
-                        <a href="{{ path('app_forgotten_password') }}" >
-                            <i class="fas fa-lock"></i>
-                            Mot de passe oublié ?
-
-                        </div>
-
-                            {#bouton se souvenir de moi #}
-
-
-                            <div class="container">
-
-                                <input type="checkbox" id="remember_me" name="_remember_me" checked/>
-                                <label for="remember_me">Se souvenir de moi</label>
-
-
-                            </div>
-
-
-                        {#bouton connexion#}
-                        <hr>
-                        <button type="submit" class="btn btn-outline-primary btn-sm btn-block">
-                            <i class="fa fa-sign-in"></i>
-                            Connexion
-                        </button>
-
-
-                        {#lien vers la page d'inscription #}
-                        <hr>
-                        <a href="{{ path('app_register') }}">
-                            <i class="fa fa-user-plus"></i>
-                            Pas de compte ? Cliquez ici.
-                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+
+
+        <div class="card-body">
+
+            <footer class="page-footer">
+                <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
+                    <a class="dark-grey-text" href="{{ path('homepage') }}">Relation.fr</a>
+                </div>
+
+
+            </footer>
 
         </div>
-    </div>
-
-    <div class="card-body">
-
-        <footer class="page-footer">
-            <div class="container text-center">
-                <i class="fa fa-copyright "></i> 2019-2020 © Local Tous droits réservés.
-
-            </div>
-        </footer>
-
-    </div>
 
 {% endblock %}
